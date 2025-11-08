@@ -75,20 +75,38 @@ const Navbar = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="hidden md:flex md:items-center md:flex-1 md:max-w-xs md:mx-8">
-            <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-              <input
-                type="text"
-                placeholder="Search questions..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500 text-sm"
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && e.target.value.trim()) {
-                    navigate(`/questions?search=${encodeURIComponent(e.target.value.trim())}`);
-                  }
-                }}
-              />
-            </div>
+          <div className="hidden md:flex md:items-center md:justify-center md:flex-1 md:max-w-2xl md:mx-8">
+            <form 
+              className="flex items-center w-full max-w-md gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const searchValue = e.target.search.value.trim();
+                if (searchValue) {
+                  navigate(`/questions?search=${encodeURIComponent(searchValue)}`);
+                }
+              }}
+            >
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <input
+                  name="search"
+                  type="text"
+                  placeholder="Search questions..."
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500 text-sm"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && e.target.value.trim()) {
+                      navigate(`/questions?search=${encodeURIComponent(e.target.value.trim())}`);
+                    }
+                  }}
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap"
+              >
+                Go
+              </button>
+            </form>
           </div>
 
           {/* Right Side */}
@@ -227,20 +245,39 @@ const Navbar = () => {
               
               {/* Mobile Search */}
               <div className="px-3 py-2">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <input
-                    type="text"
-                    placeholder="Search questions..."
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500 text-sm"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && e.target.value.trim()) {
-                        navigate(`/questions?search=${encodeURIComponent(e.target.value.trim())}`);
-                        setIsMobileMenuOpen(false);
-                      }
-                    }}
-                  />
-                </div>
+                <form 
+                  className="flex items-center gap-2"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const searchValue = e.target.search.value.trim();
+                    if (searchValue) {
+                      navigate(`/questions?search=${encodeURIComponent(searchValue)}`);
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                >
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <input
+                      name="search"
+                      type="text"
+                      placeholder="Search questions..."
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500 text-sm"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' && e.target.value.trim()) {
+                          navigate(`/questions?search=${encodeURIComponent(e.target.value.trim())}`);
+                          setIsMobileMenuOpen(false);
+                        }
+                      }}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded text-sm font-medium transition-colors whitespace-nowrap"
+                  >
+                    Go
+                  </button>
+                </form>
               </div>
 
               {/* Logout Button - Mobile */}

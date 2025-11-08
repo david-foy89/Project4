@@ -111,18 +111,20 @@ const Questions = () => {
         <div className="flex flex-col lg:flex-row gap-4">
           {/* Search */}
           <form onSubmit={handleSearch} className="flex-1">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                name="search"
-                type="text"
-                placeholder="Search questions..."
-                className="form-input pl-10 pr-4"
-                defaultValue={filters.search}
-              />
+            <div className="flex items-center gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  name="search"
+                  type="text"
+                  placeholder="Search questions..."
+                  className="form-input pl-10 pr-4 w-full"
+                  defaultValue={filters.search}
+                />
+              </div>
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 btn btn-primary btn-sm"
+                className="btn btn-primary whitespace-nowrap"
               >
                 Search
               </button>

@@ -333,6 +333,14 @@ code {
   background-color: var(--primary-600);
 }
 
+.bg-primary-700 {
+  background-color: var(--primary-700);
+}
+
+.hover\\:bg-primary-700:hover {
+  background-color: var(--primary-700);
+}
+
 .bg-blue-50 {
   background-color: #eff6ff;
 }

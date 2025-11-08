@@ -147,12 +147,13 @@ const Navbar = () => {
                     Profile
                   </Link>
                   
-                  <button
+                  <Link
+                    to="/settings"
                     className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
                   >
                     <Settings className="w-4 h-4" />
                     Settings
-                  </button>
+                  </Link>
                   
                   <hr className="my-1" />
                   
@@ -209,10 +210,14 @@ const Navbar = () => {
                     View Profile
                   </Link>
                   
-                  <button className="mobile-profile-item flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 w-full text-left transition-colors">
+                  <Link 
+                    to="/settings"
+                    className="mobile-profile-item flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 w-full text-left transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     <Settings className="w-5 h-5" />
                     Settings
-                  </button>
+                  </Link>
                   
                   <button className="mobile-profile-item flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 w-full text-left transition-colors">
                     <Bell className="w-5 h-5" />

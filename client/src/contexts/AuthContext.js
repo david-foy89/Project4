@@ -117,6 +117,26 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const updateProfile = async (profileData) => {
+    try {
+      setLoading(true);
+      const response = await axios.put('/auth/profile', profileData);
+      const { user: updatedUser } = response.data;
+
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      setUser(updatedUser);
+
+      toast.success('Profile updated successfully!');
+      return { success: true };
+    } catch (error) {
+      const message = error.response?.data?.message || 'Failed to update profile';
+      toast.error(message);
+      throw new Error(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const updateUser = (updatedUser) => {
     setUser(updatedUser);
     localStorage.setItem('user', JSON.stringify(updatedUser));
@@ -127,6 +147,7 @@ export const AuthProvider = ({ children }) => {
     login,
     register,
     logout,
+    updateProfile,
     updateUser,
     loading,
     isAuthenticated: !!user

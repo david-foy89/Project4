@@ -14,6 +14,7 @@ import Questions from './pages/questions/Questions';
 import QuestionDetail from './pages/questions/QuestionDetail';
 import AskQuestion from './pages/questions/AskQuestion';
 import Profile from './pages/user/Profile';
+import Settings from './pages/user/Settings';
 import Categories from './pages/Categories';
 import NotFound from './pages/NotFound';
 
@@ -88,6 +89,11 @@ function App() {
           <Route path="/profile/:userId?" element={
             <ProtectedRoute>
               <Profile />
+            </ProtectedRoute>
+          } />
+          <Route path="/settings" element={
+            <ProtectedRoute>
+              <Settings />
             </ProtectedRoute>
           } />
           <Route path="/categories" element={

@@ -7,6 +7,11 @@ A modern, full-stack forum application built for developers to ask questions, sh
 ![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)
 ![React](https://img.shields.io/badge/react-18.2.0-blue.svg)
 
+## 🔗 Links
+
+- **🌐 Live Demo**: [https://david-foy89.github.io/Project4/](https://david-foy89.github.io/Project4/)
+- **📂 GitHub Repository**: [https://github.com/david-foy89/Project4](https://github.com/david-foy89/Project4)
+
 ## ✨ Features
 
 ### 🔐 Authentication & User Management
@@ -199,6 +204,8 @@ Project4/
    - Backend API: http://localhost:5000
    - Health Check: http://localhost:5000/health
 
+> 💡 **Quick Preview**: Want to see the application without setting it up? Check out the [Live Demo](https://david-foy89.github.io/Project4/) showcasing the project features and design.
+
 ## 👤 User Accounts
 
 ### Test User Credentials
@@ -377,11 +384,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](../../issues) section
+1. Check the [Issues](https://github.com/david-foy89/Project4/issues) section
 2. Create a new issue with detailed information
 3. Include steps to reproduce the problem
 4. Provide system information and error logs
 
+## 🔗 Project Links
+
+- **🌐 Live Demo**: [https://david-foy89.github.io/Project4/](https://david-foy89.github.io/Project4/)
+- **📂 Source Code**: [https://github.com/david-foy89/Project4](https://github.com/david-foy89/Project4)
+- **📋 Issues**: [https://github.com/david-foy89/Project4/issues](https://github.com/david-foy89/Project4/issues)
+- **🔄 Pull Requests**: [https://github.com/david-foy89/Project4/pulls](https://github.com/david-foy89/Project4/pulls)
+
 ---
 
-⭐ **Star this repository if it helped you!**
+⭐ **Star this repository if it helped you!** [Give it a star on GitHub](https://github.com/david-foy89/Project4)

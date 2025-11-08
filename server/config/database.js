@@ -29,13 +29,16 @@ const connectDB = async () => {
     return db;
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
-    process.exit(1);
+    console.warn('⚠️  Server will continue without database connection');
+    console.warn('💡 Please install and start MongoDB to enable all features');
+    return null;
   }
 };
 
 const getDB = () => {
   if (!db) {
-    throw new Error('Database not initialized. Call connectDB first.');
+    console.warn('⚠️  Database not available. Some features may not work.');
+    return null;
   }
   return db;
 };

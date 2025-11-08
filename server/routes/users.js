@@ -108,7 +108,7 @@ router.get('/:userId', optionalAuth, async (req, res) => {
         .limit(5)
         .project({ content: 1, createdAt: 1, votes: 1, isAccepted: 1, questionId: 1 })
         .toArray()
-    ];
+    ]);
     
     res.json({
       success: true,
